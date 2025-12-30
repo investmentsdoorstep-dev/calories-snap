@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cal AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        
+        /* Motion Graphics Transitions */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .animate-premium-fade {
+            animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal-item {
+            opacity: 0;
+            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes stepEnter {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .animate-step-enter {
+            animation: stepEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Streak Animations */
+        @keyframes fire-flicker {
+            0%, 100% { transform: scale(1); filter: brightness(1) drop-shadow(0 0 0px orange); }
+            50% { transform: scale(1.15); filter: brightness(1.2) drop-shadow(0 0 8px orange); }
+        }
+        .animate-fire {
+            animation: fire-flicker 1.5s infinite ease-in-out;
+        }
+
+        @keyframes streak-pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .streak-counter:active .animate-fire {
+            animation: streak-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Paywall Transition */
+        @keyframes expand-circle {
+            0% { clip-path: circle(0% at 50% 50%); }
+            100% { clip-path: circle(150% at 50% 50%); }
+        }
+        .animate-paywall-reveal {
+            animation: expand-circle 1.2s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+        }
+
+        /* Scrollbar hidden */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Satisfying Button Click */
+        .btn-press:active {
+            transform: scale(0.92);
+            filter: brightness(0.9);
+        }
+        .btn-press {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+<body class="bg-white text-black overflow-hidden h-screen w-screen selection:bg-black selection:text-white">
+    <div id="root" class="h-full w-full"></div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Copy of Calorie AI",
+  "description": "Production-ready meal scanner powered by Gemini AI. Snap, track, and optimize your nutrition with metabolic precision.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
